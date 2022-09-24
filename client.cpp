@@ -1,4 +1,3 @@
-#include <stdexcept>
 #include <iostream>
 #include <csignal>
 
@@ -14,7 +13,7 @@ int main() {
 
     auto brokersHost = getenv("KAFKA_BROKERS");
     if(brokersHost == nullptr) {
-        brokersHost = strdup("127.0.0.1:9092");
+        brokersHost = strdup("127.0.0.1:9094");
         cout<<"Using default Kafka host: "<<brokersHost<<endl;
     }
 
