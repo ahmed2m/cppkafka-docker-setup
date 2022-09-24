@@ -14,3 +14,24 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+  server:
+    profiles: ["server"]
+    build:
+        context: .
+        dockerfile: Dockerfile
+    image: kafka-app
+    container_name: kafka-server
+    environment:
+      KAFKA_BROKERS: kafka:9092
+      TARGET: producer
+    depends_on:
+      - kafka
+
+  client:
+    profiles: ["client"]
+    image: kafka-app
+    container_name: kafka-client
+    environment:
+      KAFKA_BROKER: kafka:9092
+      TARGET: consumer
