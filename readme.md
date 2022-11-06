@@ -1,4 +1,4 @@
-# Dell task - Client/Server
+# Temperature sensors simulation - Client/Server (Kafka)
 
 This is a simple client/server application that demonstrates a publisher/subscriber pattern to send a message to connected clients.
 
